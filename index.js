@@ -28,7 +28,6 @@ console.log("Connected")
 
 // Compile the solidity data
 const output = JSON.parse(solc.compile(JSON.stringify(input)));
-console.log(output)
 const { Main } = output.contracts[file_name]
 const { abi, evm } = Main
 const contract = new web3.eth.Contract(abi);
@@ -53,7 +52,7 @@ const deployAndRunContract = async () => {
     })
     .on('confirmation', async (confNumber, receipt) => {
       const { contractAddress } = receipt
-      console.log("Deployed at", contractAddress);
+      console.log("Deployed");
   
       // Get the deployed contract instance:
       const contractInstance = new web3.eth.Contract(abi, contractAddress)
