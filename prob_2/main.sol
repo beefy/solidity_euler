@@ -11,9 +11,9 @@ contract Main {
     // find the sum of the even-valued terms.
 
     uint[] memo = [1, 1];
-    uint sum;
 
     function main() public returns(uint) {
+        uint sum;
         uint fib_counter = 1;
         uint fib_value = fib(fib_counter);
         while(fib_value < 4000000) {
